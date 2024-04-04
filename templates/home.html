@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Steel Plate Defect Prediction</title>
+    <style>
+      body {
+        background-color: #079912;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        text-align: left;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Steel Plate Defect Prediction</h1>
+      <form method="POST" action="{{url_for('home')}}">
+        {% for column_name in ['X_Minimum', 'X_Maximum', 'Y_Minimum',
+        'Y_Maximum', 'Pixels_Areas', 'X_Perimeter', 'Y_Perimeter',
+        'Sum_of_Luminosity', 'Minimum_of_Luminosity', 'Maximum_of_Luminosity',
+        'Length_of_Conveyer', 'TypeOfSteel_A300', 'TypeOfSteel_A400',
+        'Steel_Plate_Thickness', 'Edges_Index', 'Empty_Index', 'Square_Index',
+        'Outside_X_Index', 'Edges_X_Index', 'Edges_Y_Index',
+        'Outside_Global_Index', 'LogOfAreas', 'Log_X_Index', 'Log_Y_Index',
+        'Orientation_Index', 'Luminosity_Index', 'SigmoidOfAreas'] %}
+        <b>
+          {{ column_name }}:
+          <input
+            type="text"
+            name="{{ column_name }}"
+            placeholder="Enter {{ column_name }}"
+            required
+          /><br />
+        </b>
+        {% endfor %}
+        <br />
+        <input type="submit" value="Predict!" />
+      </form>
+    </div>
+  </body>
+</html>

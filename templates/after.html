@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEFECT PREDICTION</title>
+    <style>
+      body {
+        background-color: #a3cfb4;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>DEFECT PREDICTION:</h1>
+
+      {% if data == 0 %}
+      <h1>No Faults</h1>
+      {% elif data == 1 %}
+      <h1>Pastry</h1>
+      {% elif data == 2 %}
+      <h1>Z Scratch</h1>
+      {% elif data == 3 %}
+      <h1>K Scratch</h1>
+      {% elif data == 4 %}
+      <h1>Strains</h1>
+      {% elif data == 5 %}
+      <h1>Dirtiness</h1>
+      {% elif data == 6 %}
+      <h1>Bumps</h1>
+      {% elif data == 7 %}
+      <h1>Other Faults</h1>
+      {% elif data == 8 %}
+      <h1>Two Faults</h1>
+      {% endif %}
+
+      <br /><br />
+      <a href="/">Go back to the home page</a>
+    </div>
+  </body>
+</html>
